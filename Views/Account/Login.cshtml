@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row d-flex justify-content-center">
+    <form asp-controller="Account" asp-action="Login" method="post" class="w-50 justify-content-between">
+        <div class="form-group">
+            <label asp-for="Email" class="form-label mt-4">Email address</label>
+            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email" asp-for="Email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="form-label mt-4">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="off" asp-for="Password">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="modal-footer mt-3 justify-content-around w-50">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a type="button" class="btn btn-secondary" asp-controller="Home" asp-action="Index">Register</a>
+        </div>
+    </form>
+</div>

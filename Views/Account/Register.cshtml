@@ -1,0 +1,39 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row d-flex justify-content-center">
+    <form asp-controller="Account" asp-action="Register" method="post" class="w-50 justify-content-between">
+        <div class="form-group">
+            <label asp-for="FirstName" class="form-label mt-4">First Name</label>
+            <input type="text" class="form-control" id="firstname" placeholder="Enter first name" asp-for="FirstName">
+            <span id="firstname" class="form-text text-muted" asp-validation-for="FirstName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="form-label mt-4">Last Name</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Enter last name" asp-for="LastName">
+            <span id="firstname" class="form-text text-muted" asp-validation-for="LastName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="form-label mt-4">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" asp-for="Email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <span id="email" class="form-text text-muted" asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="form-label mt-4">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="off" asp-for="Password">
+            <span id="password" class="form-text text-muted" asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword" class="form-label mt-4">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmedpass" placeholder="Confirmed password" autocomplete="off" asp-for="ConfirmPassword">
+            <span id="confirmedpass" class="form-text text-muted" asp-validation-for="ConfirmPassword"></span>
+        </div>
+        <div class="modal-footer mt-3 justify-content-around w-50">
+            <button type="submit" class="btn btn-primary">Register</button>
+            <a type="button" class="btn btn-secondary" asp-controller="Home" asp-action="Index">Login</a>
+        </div>
+    </form>
+</div>
